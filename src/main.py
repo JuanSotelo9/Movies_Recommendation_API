@@ -3,6 +3,7 @@
 """
 
 from db.postgres import init_pool, close_pool
+from db.neo4j import init_driver, close_driver
 
 from repositories.postgres_repo import GenreRepo  as PgGenreRepo
 from repositories.postgres_repo import MovieRepo  as PgMovieRepo
@@ -14,8 +15,9 @@ def separador(titulo: str):
     print(f"  {titulo}")
     print(f"{'─' * 50}")
 
-separador("Iniciando conexion")
+separador("Iniciando conexiones")
 init_pool()
+init_driver()
 
 separador("PostgreSQL — Géneros")
  
