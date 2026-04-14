@@ -8,7 +8,7 @@ from contextlib import contextmanager
 
 load_dotenv()
 
-_driver = Driver | None = None
+_driver: Driver | None = None
 
 def init_driver():
     """
